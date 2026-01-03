@@ -34,7 +34,7 @@ export const useAuth = () => {
 // CHANGE: Rename to reflect the new role
 const MODERATOR_EMAILS = [
   "akhyarahmad919@gmail.com",
-  "ansuthisis789@gmaiil.com"
+  "ansuthisis789@gmail.com"
 ];
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
@@ -44,11 +44,11 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [isModerator, setIsModerator] = useState(false);
 
   const signup = (email: string, password: string) => {
-    return createUserWithEmailAndPassword(auth, email, password).then(() => {});
+    return createUserWithEmailAndPassword(auth, email, password).then(() => { });
   };
 
   const login = (email: string, password: string) => {
-    return signInWithEmailAndPassword(auth, email, password).then(() => {});
+    return signInWithEmailAndPassword(auth, email, password).then(() => { });
   };
 
   const logout = () => {
@@ -56,7 +56,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   };
 
   const signInWithGoogle = () => {
-    return signInWithPopup(auth, googleProvider).then(() => {});
+    return signInWithPopup(auth, googleProvider).then(() => { });
   };
 
   const getToken = async (): Promise<string | null> => {
@@ -69,14 +69,14 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setCurrentUser(user);
-      
+
       // CHANGE: Check if user is a moderator
       if (user && user.email && MODERATOR_EMAILS.includes(user.email)) {
         setIsModerator(true);
       } else {
         setIsModerator(false);
       }
-      
+
       setLoading(false);
     });
 
