@@ -198,7 +198,7 @@ const ModeratorDashboard: React.FC = () => {
           </div>
         )}
 
-        {/* Users Section */}
+        {/* Users Section
         <div className="bg-gray-800 rounded-xl overflow-hidden">
           <div className="p-6 border-b border-gray-700">
             <div className="flex justify-between items-center">
@@ -232,7 +232,7 @@ const ModeratorDashboard: React.FC = () => {
               </tbody>
             </table>
           </div>
-        </div>
+        </div> */}
       </main>
     </div>
   );
